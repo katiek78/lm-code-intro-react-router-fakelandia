@@ -2,10 +2,10 @@ import { NavLink } from "react-router-dom";
 
 const Nav : React.FC = () => <>
     <nav>
-        <ul>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/misdemeanours">Misdemeanours</NavLink></li>
-            <li><NavLink to="/confession">Confess To Us</NavLink></li>
+        <ul className='nav--ul'>
+            <li className='nav--li'><NavLink className='nav--a' to="/">Home</NavLink></li>
+            <li className='nav--li'><NavLink className='nav--a' to="/misdemeanours">Misdemeanours</NavLink></li>
+            <li className='nav--li'><NavLink className='nav--a' to="/confession">Confess To Us</NavLink></li>
         </ul>
     </nav>
 </>
