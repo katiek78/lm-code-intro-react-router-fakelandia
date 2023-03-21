@@ -1,3 +1,3 @@
-const Misdemeanours : React.FC = () => <>Home!</>;
+const Misdemeanours : React.FC = () => <>Misdemeanours</>;
 
 export default Misdemeanours;

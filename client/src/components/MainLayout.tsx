@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
+import Header from "./Header";
+
 const MainLayout : React.FC = () => <>
-    <main>
-        Main stuff
-        <br />
+    <Header />
+    <main>        
         <Outlet />
     </main>
 </>;
