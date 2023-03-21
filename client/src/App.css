@@ -1,5 +1,5 @@
 body {
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Architects Daughter', cursive; 
 }
 
 header {
@@ -7,11 +7,12 @@ header {
   justify-content: space-evenly;
   border: 2px solid black;
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 
+
 main {
-  margin: 3em 10%;
+  margin: 3em 10%;  
 }
 
 .FJD {
@@ -40,6 +41,13 @@ main {
 
 .nav--a {
   text-decoration: none;
+}
+
+footer {
+  text-align: center; 
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
 
 @media only screen and (min-width: 700px) {
