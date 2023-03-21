@@ -25,7 +25,7 @@ main {
  
 }
 
-.nav--ul {
+.nav__ul {
   list-style-type: none;
   padding: 10px;
   font-size: 1em;
@@ -35,11 +35,11 @@ main {
   flex-direction: column;
 }
 
-.nav--li {
+.nav__li {
   margin: 20px;  
 }
 
-.nav--a {
+.nav__a {
   text-decoration: none;
 }
 
@@ -52,7 +52,7 @@ footer {
 
 @media only screen and (min-width: 700px) {
 
-  .nav--ul {
+  .nav__ul {
     list-style-type: none;
     padding: 10px;
     font-size: 1.5em;  
@@ -65,7 +65,7 @@ footer {
 }
 
 @media only screen and (min-width: 1000px) {
-  .nav--ul {    
+  .nav__ul {    
     font-size: 2em;    
   }
 
