@@ -44,15 +44,18 @@ main {
   text-decoration: none;
 }
 
-.misdemeanourContainer {
+.container {
   display: grid;
   width:90%;
   margin: 0 auto;
   grid-template-columns: 1fr [line1] 1fr [line2] 2fr [line3] 1fr;    
+  gap: 0;
 }
 
-.misdemeanourContainer * {
+.container * {
   padding: 3px;
+  margin: 0px;
+  text-align: center;
 }
 
 .heading {
@@ -71,7 +74,7 @@ main {
 }
 
 .misdemeanour__filter {  
-  
+  grid-column: 3;
 }
 
 .misdemeanour__heading {  
@@ -84,7 +87,7 @@ main {
   grid-row: 1;
 }
 
-.grid__item {
+.grid__line {
   border-right-style: solid;
 }
 
