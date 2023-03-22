@@ -13,11 +13,11 @@ const MisdemeanourDisplay : React.FC = () => {
             
             <p className='grid__line heading misdemeanour__heading'>Misdemeanour</p>            
             <p className='heading punishment__heading'>Punishment idea</p>
-            {misdemeanours.map((m) => (<>
+            {misdemeanours.map((m, index) => (<>
             <p className='grid__line grid__column1'>{m.citizenId}</p>
             <p className='grid__line grid__column2'>{m.date}</p>
             <p className='grid__line grid__column3'>{m.misdemeanour} {MISDEMEANOUR_EMOJIS[MISDEMEANOURS.indexOf(m.misdemeanour)]}</p>
-            <p></p></>))}    
+            <p className='grid__column4'><img src={`https://picsum.photos/150/100?random=${index}`} /></p></>))}    
     </div>
 
     <div>
