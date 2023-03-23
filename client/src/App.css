@@ -115,6 +115,10 @@ main {
   grid-column: 4;  
 }
 
+.confession__intro-text {
+  font-size: 1.3em;
+}
+
 footer {
   text-align: center; 
   position: fixed;
@@ -146,6 +150,10 @@ footer {
   .grid__item {
     font-size: 1.1em;
   }
+
+  .confession__intro-text {
+    font-size: 1.7em;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -167,5 +175,9 @@ footer {
 
   .grid__item {
     font-size:1.2em;
+  }
+
+  .confession__intro-text {
+    font-size: 2em;
   }
 }
