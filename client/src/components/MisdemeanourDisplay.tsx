@@ -9,12 +9,12 @@ const MisdemeanourDisplay : React.FC = () => {
 
     return(
     <>
-    <div className="container"><p className='misdemeanour__filter'><select id='filterMisdemeanourKind' defaultValue="" placeholder="Filter" onChange={(e) => changeFilter(e.target.value)}>
+    <div className="misdemeanour__container container"><p className='misdemeanour__filter'><select id='filterMisdemeanourKind' defaultValue="" placeholder="Filter" onChange={(e) => changeFilter(e.target.value)}>
     <option value="" disabled>Filter</option>
     {MISDEMEANOURS.map((m, index) => <option key={'option' + index} value={m}>{m}</option>)}
     <option value="all">** show all **</option>
     </select></p></div>
-    <div id='misdemeanourTable' className='container'>                      
+    <div id='misdemeanourTable' className='misdemeanour__container container'>                      
             <p className='grid__line heading citizenId__heading'>Citizen ID</p>                  
             <p className='grid__line heading date__heading'>Date</p>                    
             

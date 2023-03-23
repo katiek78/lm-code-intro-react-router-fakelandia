@@ -45,14 +45,17 @@ main {
 }
 
 .container {
-  display: grid;
   width:90%;
   margin: 0 auto;
+}
+
+.misdemeanour__container {
+  display: grid;  
   grid-template-columns: 1fr [line1] 1fr [line2] 1.5fr [line3] 1fr;    
   gap: 0;
 }
 
-.container * {
+.misdemeanour__container * {
   padding: 3px;
   margin: 0px;
   text-align: center;
