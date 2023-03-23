@@ -118,7 +118,31 @@ main {
   grid-column: 4;  
 }
 
-.confession__intro-text {
+.confession__text {
+  font-size: 1.3em;
+}
+
+.confession__form {
+  display: flex;    
+  align-items: flex-end;
+  flex-direction: column;
+  width:70%;
+}
+
+.confession__form * {
+  margin: 5px;
+}
+
+.confession__textarea {
+  align-self: center;
+  width:100%;
+}
+
+.confession__button {
+  align-self: center;
+}
+.confession__button-text {
+  font-family: 'Architects Daughter', cursive; 
   font-size: 1.3em;
 }
 
@@ -154,8 +178,12 @@ footer {
     font-size: 1.1em;
   }
 
-  .confession__intro-text {
-    font-size: 1.7em;
+  .confession__text {
+    font-size: 1.5em;
+  }
+
+  .confession__button-text {
+    font-size: 1.5em;
   }
 }
 
@@ -180,7 +208,13 @@ footer {
     font-size:1.2em;
   }
 
-  .confession__intro-text {
-    font-size: 2em;
+  .confession__text {
+    font-size: 1.8em;
   }
+
+  .confession__button-text {
+    font-size: 1.8em;
+  }
+
+
 }
