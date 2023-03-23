@@ -5,10 +5,11 @@ import { MISDEMEANOURS, MISDEMEANOUR_EMOJIS } from "../../types/misdemeanours.ty
 const MisdemeanourDisplay : React.FC = () => {
     const misdemeanours = useMisdemeanours();
     const [ filterKind, setFilterKind ] = useState<string>('');
+    const changeFilter = (value: string) => setFilterKind(value)
 
     return(
     <>
-    <div className="container"><p className='misdemeanour__filter'><select id='filterMisdemeanourKind' defaultValue="" placeholder="Filter" onChange={(e) => setFilterKind(e.target.value)}>
+    <div className="container"><p className='misdemeanour__filter'><select id='filterMisdemeanourKind' defaultValue="" placeholder="Filter" onChange={(e) => changeFilter(e.target.value)}>
     <option value="" disabled>Filter</option>
     {MISDEMEANOURS.map((m, index) => <option key={'option' + index} value={m}>{m}</option>)}
     <option value="all">** show all **</option>

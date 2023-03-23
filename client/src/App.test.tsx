@@ -17,11 +17,11 @@ test('App renders and user can navigate', async () => {
 
     // Confessions route
     await user.click(screen.getByText(/Confess To Us/i, { selector: 'a'}))
-    expect(screen.getByText(/Confession time!/i)).toBeInTheDocument()
+    await waitFor(() => expect(screen.getByText(/Confession time!/i)).toBeInTheDocument());
 
     // Home route
     await user.click(screen.getByText(/Home/i, { selector: 'a'}))
-    expect(screen.getByText(/Welcome/i)).toBeInTheDocument()
+    await waitFor(() => expect(screen.getByText(/Welcome/i)).toBeInTheDocument());
 
 });
 
