@@ -13,7 +13,7 @@ const MisdemeanourDisplay : React.FC = () => {
     {MISDEMEANOURS.map((m, index) => <option key={'option' + index} value={m}>{m}</option>)}
     <option value="all">** show all **</option>
     </select></p></div>
-    <div className='container'>                      
+    <div id='misdemeanourTable' className='container'>                      
             <p className='grid__line heading citizenId__heading'>Citizen ID</p>                  
             <p className='grid__line heading date__heading'>Date</p>                    
             
