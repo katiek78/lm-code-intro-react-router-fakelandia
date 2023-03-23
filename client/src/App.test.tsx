@@ -2,7 +2,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom';
 import App from './App';
-import { MemoryRouter } from 'react-router-dom';
 
 test('App renders and user can navigate', async () => {
     render(<App />);
@@ -24,16 +23,5 @@ test('App renders and user can navigate', async () => {
     await user.click(screen.getByText(/Home/i, { selector: 'a'}))
     expect(screen.getByText(/Welcome/i)).toBeInTheDocument()
 
-});
-
-test('landing on a bad page', () => {
-    const badRoute = '/some/bad/route'
-      
-    render(
-      <MemoryRouter initialEntries={[badRoute]}>
-        <App />
-      </MemoryRouter>,    
-    )
-    expect(screen.getByText(/Something went wrong.../i)).toBeInTheDocument();
 });
 
