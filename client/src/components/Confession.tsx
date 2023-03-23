@@ -1,6 +1,37 @@
+import { useState, useEffect } from "react";
 import { MISDEMEANOURS } from "../../types/misdemeanours.types";
 
-const Confession : React.FC = () => <>
+const Confession : React.FC = () => {
+
+    const [confessionEnabled, setConfessionEnabled] = useState<boolean>(false);
+    const [validSubject, setValidSubject] = useState<boolean>(false);
+    const [validDetails, setValidDetails] = useState<boolean>(false);
+    const [validReason, setValidReason] = useState<boolean>(false);
+
+    const checkValidSubject = (value: string) => {       
+        if (value.length > 0) {
+            setValidSubject(true);       
+        } else setValidSubject(false);       
+    };
+
+    const checkValidDetails = (value: string) => {        
+        if (value.length > 14) {
+            setValidDetails(true);      
+        } else setValidDetails(false);       
+    };
+    const checkValidReason = (value: string) => {        
+        if (value !== '') {
+            setValidReason(true);      
+        } else setValidReason(false);       
+    };
+
+    useEffect(() => {                   
+            if (validSubject && validDetails && validReason) {
+                setConfessionEnabled(true);
+            } else setConfessionEnabled(false);    
+      }, [validSubject, validDetails, validReason]);
+
+return (<>
     <div className="confession__container container">
         <p className="confession__text">It's very difficult to catch people committing misdemeanours so we appreciate it when citizens confess to us directly.</p>
 
@@ -8,18 +39,20 @@ const Confession : React.FC = () => <>
 
         <form className='confession__form'>
             <p><label className="confession__text" htmlFor='subjectInput'>Subject</label>
-            <input type="text" id="subjectInput"></input>    </p>        
+            <input onChange={(e) => checkValidSubject(e.target.value)} type="text" id="subjectInput"></input>    </p>        
             <p><label className="confession__text" htmlFor='reasonSelect'>Reason for contact:</label>
-            <select id="reasonSelect">
+            <select defaultValue="" placeholder="Please select a reason..." onChange={(e) => checkValidReason(e.target.value)} id="reasonSelect">
+            <option value="" disabled>Please select a reason...</option>
             {MISDEMEANOURS.map((m, index) => <option key={'option' + index} value={m}>{m}</option>)}            
             <option value="just-talk">I just want to talk</option>    
             </select></p>
-            <textarea className="confession__textarea" rows={15} cols={80}>
+            <textarea onChange={(e) => checkValidDetails(e.target.value)} id="confessionDetails" className="confession__textarea" rows={15} cols={80}>
 
             </textarea>
-            <button className="confession__button confession__button-text">Confess</button>
+            <button disabled={!confessionEnabled} className="confession__button confession__button-text">Confess</button>
         </form>
     </div>
-</>;
+</>);
+}
 
 export default Confession;
