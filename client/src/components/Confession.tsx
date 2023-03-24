@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { MISDEMEANOURS } from "../../types/misdemeanours.types";
+import postConfession from "./postConfession"
+import { JustTalk, JUST_TALK, MisdemeanourKind, MISDEMEANOURS } from "../types/misdemeanours.types";
+import { ConfessionType } from "../types/confession.types";
 
 const Confession: React.FC = () => {
   const [confessionEnabled, setConfessionEnabled] = useState<boolean>(false);
@@ -28,6 +30,58 @@ const Confession: React.FC = () => {
       setValidReason(true);
     } else setValidReason(false);
   };
+
+  const confess = async () => {    
+    const subjectInput : HTMLInputElement | null = document.getElementsByTagName("input")[0];
+    if (!subjectInput) return;
+    const subject = subjectInput.value;    
+
+    const reasonInput : HTMLSelectElement | null = document.getElementsByTagName("select")[0];
+    if (!reasonInput) return;
+    
+    // export type ConfessionInput = {
+    //     subject: string;
+    //     details: string;
+    //     reason: MisdemeanourKind | JustTalk;
+    // };
+    
+    // export function weaklyValidateConfession(body: any) {
+    //     if (!body) return false;
+    
+    //     if (
+    //         !body.reason ||
+    //         !(MISDEMEANOURS.includes(body.reason) || body.reason === JUST_TALK)
+    //     ) {
+    //         return false;
+    //     }
+    
+    //     return body.subject !== undefined && body.details !== undefined;
+    // }
+
+    function isMisdemeanourKindorJustTalk(userInput: string): userInput is MisdemeanourKind | JustTalk {
+       return (MISDEMEANOURS.find(el => el === userInput) !== undefined) || userInput === JUST_TALK;
+       //return (MISDEMEANOURS.includes(userInput) || userInput === JUST_TALK)
+      }
+    if (!isMisdemeanourKindorJustTalk(reasonInput.value)) return;
+    const reason: MisdemeanourKind | JustTalk = reasonInput.value;
+        
+    const detailsInput : HTMLTextAreaElement| null = document.getElementsByTagName("textarea")[0];
+    if (!detailsInput) return;
+    const details = detailsInput.value;
+
+    const confession: ConfessionType = {
+        subject, reason, details
+    }
+    
+    const postingResult = await postConfession(confession);
+    console.log(postingResult)
+    if (!postingResult.success) {
+        console.log(`Error: ${postingResult.message}`);
+    } else {
+        console.log(`success!`);
+    }
+    
+  }
 
   useEffect(() => {
     if (validSubject && validDetails && validReason) {
@@ -129,6 +183,7 @@ const Confession: React.FC = () => {
           <button
             disabled={!confessionEnabled}
             className="confession__button confession__button-text"
+            onClick={(e) => {e.preventDefault(); confess();}}
           >
             Confess
           </button>

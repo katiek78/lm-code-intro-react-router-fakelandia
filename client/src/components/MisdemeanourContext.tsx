@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Misdemeanour } from '../../types/misdemeanours.types';
+import { Misdemeanour } from '../types/misdemeanours.types';
 
 const MisdemeanourContext = React.createContext<Misdemeanour[]>([]);
 

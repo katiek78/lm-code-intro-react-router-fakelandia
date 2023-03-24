@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Misdemeanour } from "../../types/misdemeanours.types";
+import { Misdemeanour } from "../types/misdemeanours.types";
 import MisdemeanourContext from "./MisdemeanourContext";
 import MisdemeanourDisplay from "./MisdemeanourDisplay";
 import loadMisdemeanours from "./loadMisdemeanour";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMisdemeanours } from "./MisdemeanourContext";
-import { MISDEMEANOURS, MISDEMEANOUR_EMOJIS } from "../../types/misdemeanours.types";
+import { MISDEMEANOURS, MISDEMEANOUR_EMOJIS } from "../types/misdemeanours.types";
 
 const MisdemeanourDisplay : React.FC = () => {
     const misdemeanours = useMisdemeanours();

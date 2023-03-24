@@ -2,7 +2,7 @@ import { render, screen, act, fireEvent, waitFor } from "@testing-library/react"
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import MisdemeanourContext from "./MisdemeanourContext";
-import { Misdemeanour } from "../../types/misdemeanours.types";
+import { Misdemeanour } from "../types/misdemeanours.types";
 import MisdemeanourDisplay from "./MisdemeanourDisplay";
 
 test('renders filter select box', () => {
