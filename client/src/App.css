@@ -133,6 +133,18 @@ main {
   margin: 5px;
 }
 
+.confession__formElement--valid {
+  border: 1px solid#000000;
+}
+
+.confession__formElement--invalid {
+  border: 1px solid #FF0000;
+}
+
+.confession__formElement--focus-invalid {
+  border: 4px solid #FF0000;
+}
+
 .confession__textarea {
   align-self: center;
   width:100%;
