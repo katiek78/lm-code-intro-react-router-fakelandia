@@ -169,7 +169,7 @@ const Confession: React.FC = () => {
           >
             Confess
           </button>
-            <p>{postConfessionMessage}</p>
+            <p className='confession__message'>{postConfessionMessage}</p>
         </form>
       </div>
     </>

@@ -194,6 +194,11 @@ select {
   font-size: 1.3em;
 }
 
+.confession__message{
+  font-weight:bold;
+  font-size:1.1em;
+}
+
 footer {
   text-align: center; 
   position: fixed;
