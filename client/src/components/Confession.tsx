@@ -58,6 +58,7 @@ const Confession: React.FC = () => {
     if (!postingResult.success) {
         setPostConfessionMessage(`Error: ${postingResult.message}`);
     } else if (!postingResult.justTalked) {
+        //Add confession to list
         setPostConfessionMessage(`Thanks for submitting your confession. Rest assured it's been added to our list.`);
     } else {
         setPostConfessionMessage(`Thanks for talking to us. We appreciate it and are always ready to listen.`);
