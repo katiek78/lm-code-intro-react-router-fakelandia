@@ -49,11 +49,13 @@ const Confession: React.FC = () => {
         </p>
 
         <form className="confession__form">
-          <p>
-            <label className="confession__text" htmlFor="subjectInput">
+          <div className="confession__formElementOuterContainer">
+            <label className="confession__text confession__label" htmlFor="subjectInput">
               Subject
             </label>
-            <input
+           
+            <p className="confession__formElementInnerContainer">
+                <input
               className={
                 validSubject
                   ? "confession__formElement--valid"
@@ -67,11 +69,15 @@ const Confession: React.FC = () => {
               type="text"
               id="subjectInput"
             ></input>{" "}
-          </p>
-          <p>
-            <label className="confession__text" htmlFor="reasonSelect">
+            {!validSubject && <span className="confession__validation">Subject is required.</span>}            
+            </p>            
+          </div>
+
+          <div className="confession__formElementOuterContainer">         
+            <label className="confession__text confession__label" htmlFor="reasonSelect">
               Reason for contact:
             </label>
+            <p className="confession__formElementInnerContainer">
             <select
               className={
                 validReason
@@ -97,7 +103,11 @@ const Confession: React.FC = () => {
               ))}
               <option value="just-talk">I just want to talk</option>
             </select>
+            {!validReason && <span className="confession__validation">A reason must be selected.</span>}
           </p>
+          </div>
+
+            <div className="confession__textAreaContainer">
           <textarea
             className={
               "confession__textArea " +
@@ -114,6 +124,8 @@ const Confession: React.FC = () => {
             rows={15}
             cols={80}
           ></textarea>
+          {!validDetails && <span className="confession__validation">Details should be at least 15 characters.</span>}
+          </div>
           <button
             disabled={!confessionEnabled}
             className="confession__button confession__button-text"
