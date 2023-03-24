@@ -11,6 +11,7 @@ const Confession: React.FC = () => {
   const [subjectFocused, setSubjectFocused] = useState<boolean>(false);
   const [reasonFocused, setReasonFocused] = useState<boolean>(false);
   const [detailsFocused, setDetailsFocused] = useState<boolean>(false);
+  const [postConfessionMessage, setPostConfessionMessage] = useState<string>('');
 
   const checkValidSubject = (value: string) => {
     if (value.length > 0) {
@@ -37,30 +38,10 @@ const Confession: React.FC = () => {
     const subject = subjectInput.value;    
 
     const reasonInput : HTMLSelectElement | null = document.getElementsByTagName("select")[0];
-    if (!reasonInput) return;
-    
-    // export type ConfessionInput = {
-    //     subject: string;
-    //     details: string;
-    //     reason: MisdemeanourKind | JustTalk;
-    // };
-    
-    // export function weaklyValidateConfession(body: any) {
-    //     if (!body) return false;
-    
-    //     if (
-    //         !body.reason ||
-    //         !(MISDEMEANOURS.includes(body.reason) || body.reason === JUST_TALK)
-    //     ) {
-    //         return false;
-    //     }
-    
-    //     return body.subject !== undefined && body.details !== undefined;
-    // }
+    if (!reasonInput) return;        
 
     function isMisdemeanourKindorJustTalk(userInput: string): userInput is MisdemeanourKind | JustTalk {
-       return (MISDEMEANOURS.find(el => el === userInput) !== undefined) || userInput === JUST_TALK;
-       //return (MISDEMEANOURS.includes(userInput) || userInput === JUST_TALK)
+       return (MISDEMEANOURS.find(el => el === userInput) !== undefined) || userInput === JUST_TALK;       
       }
     if (!isMisdemeanourKindorJustTalk(reasonInput.value)) return;
     const reason: MisdemeanourKind | JustTalk = reasonInput.value;
@@ -73,12 +54,13 @@ const Confession: React.FC = () => {
         subject, reason, details
     }
     
-    const postingResult = await postConfession(confession);
-    console.log(postingResult)
+    const postingResult = await postConfession(confession);    
     if (!postingResult.success) {
-        console.log(`Error: ${postingResult.message}`);
+        setPostConfessionMessage(`Error: ${postingResult.message}`);
+    } else if (!postingResult.justTalked) {
+        setPostConfessionMessage(`Thanks for submitting your confession. Rest assured it's been added to our list.`);
     } else {
-        console.log(`success!`);
+        setPostConfessionMessage(`Thanks for talking to us. We appreciate it and are always ready to listen.`);
     }
     
   }
@@ -187,6 +169,7 @@ const Confession: React.FC = () => {
           >
             Confess
           </button>
+            <p>{postConfessionMessage}</p>
         </form>
       </div>
     </>
