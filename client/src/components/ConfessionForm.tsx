@@ -11,6 +11,7 @@ import { useMisdemeanours } from "./MisdemeanourContext";
 import ConfessionFormSubject from "./ConfessionFormSubject";
 import ConfessionFormReason from "./ConfessionFormReason";
 import ConfessionFormDetails from "./ConfessionFormDetails";
+import ConfessionFormButton from "./ConfessionFormButton";
 
 const ConfessionForm: React.FC = () => {
 
@@ -90,18 +91,7 @@ const ConfessionForm: React.FC = () => {
           <ConfessionFormSubject validSubject={validSubject} setValidSubject={setValidSubject} />
           <ConfessionFormReason validReason={validReason} setValidReason={setValidReason} />
           <ConfessionFormDetails validDetails={validDetails} setValidDetails={setValidDetails} /> 
-
-          
-          <button
-            disabled={!confessionEnabled}
-            className="confession__button confession__button-text"
-            onClick={(e) => {
-              e.preventDefault();
-              confess();
-            }}
-          >
-            Confess
-          </button>
+          <ConfessionFormButton confessionEnabled={confessionEnabled} confess={confess} />                    
           <p className="confession__message">{postConfessionMessage}</p>
         </form>
 
