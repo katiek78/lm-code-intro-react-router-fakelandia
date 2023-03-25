@@ -22,7 +22,7 @@ const MisdemeanourDisplay : React.FC = () => {
             <p className='heading punishment__heading'>Punishment idea</p>
             {misdemeanours
             .filter(m => {
-                const selectBox: HTMLSelectElement | null =  document.getElementsByTagName('select')[0];
+                const selectBox: HTMLSelectElement | null =  document.getElementById('filterMisdemeanourKind') as HTMLSelectElement;
                 if (!selectBox) return true;
                 return selectBox.value==='all' || selectBox.value === '' || selectBox.value===m.misdemeanour})
             .map((m, index) => (<React.Fragment key={'gridItem' + index}>
