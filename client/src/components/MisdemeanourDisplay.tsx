@@ -3,7 +3,7 @@ import { useMisdemeanours } from "./MisdemeanourContext";
 import { MISDEMEANOURS, MISDEMEANOUR_EMOJIS } from "../types/misdemeanours.types";
 
 const MisdemeanourDisplay : React.FC = () => {
-    const misdemeanours = useMisdemeanours();
+    const {misdemeanours, setMisdemeanours} = useMisdemeanours();
     const [ filterKind, setFilterKind ] = useState<string>('');
     const changeFilter = (value: string) => setFilterKind(value)
 

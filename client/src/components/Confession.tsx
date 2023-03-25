@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import postConfession from "./postConfession"
 import { JustTalk, JUST_TALK, MisdemeanourKind, MISDEMEANOURS } from "../types/misdemeanours.types";
 import { ConfessionType } from "../types/confession.types";
+import { useMisdemeanours } from "./MisdemeanourContext";
 
 const Confession: React.FC = () => {
   const [confessionEnabled, setConfessionEnabled] = useState<boolean>(false);
@@ -12,6 +13,7 @@ const Confession: React.FC = () => {
   const [reasonFocused, setReasonFocused] = useState<boolean>(false);
   const [detailsFocused, setDetailsFocused] = useState<boolean>(false);
   const [postConfessionMessage, setPostConfessionMessage] = useState<string>('');
+  const {misdemeanours, setMisdemeanours} = useMisdemeanours();
 
   const checkValidSubject = (value: string) => {
     if (value.length > 0) {
@@ -58,7 +60,8 @@ const Confession: React.FC = () => {
     if (!postingResult.success) {
         setPostConfessionMessage(`Error: ${postingResult.message}`);
     } else if (!postingResult.justTalked) {
-        //Add confession to list
+        if (reason === 'just-talk') return;
+        setMisdemeanours(misdemeanours.concat([{misdemeanour: reason, citizenId: Math.floor(Math.random()*10000), date: (new Date()).toLocaleDateString('en-GB')}]));       
         setPostConfessionMessage(`Thanks for submitting your confession. Rest assured it's been added to our list.`);
     } else {
         setPostConfessionMessage(`Thanks for talking to us. We appreciate it and are always ready to listen.`);

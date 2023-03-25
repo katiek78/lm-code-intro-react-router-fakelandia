@@ -23,7 +23,7 @@ const Router: React.FC = () => {
   
 
    return (
-    <MisdemeanourContext.Provider value={misdemeanours}>
+    <MisdemeanourContext.Provider value={{misdemeanours, setMisdemeanours}}>
         <Routes>
             <Route path="/" element={<MainLayout />}>
                 <Route index element={<Home />}></Route>
