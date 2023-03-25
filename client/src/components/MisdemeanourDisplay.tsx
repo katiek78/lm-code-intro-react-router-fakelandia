@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { useMisdemeanours } from "./MisdemeanourContext";
 import { MISDEMEANOURS, MISDEMEANOUR_EMOJIS } from "../types/misdemeanours.types";
+import MisdemeanourFilter from "./MisdemeanourFilter";
 
 const MisdemeanourDisplay : React.FC = () => {
     const {misdemeanours, setMisdemeanours} = useMisdemeanours();
-    const [ filterKind, setFilterKind ] = useState<string>('');
-    const changeFilter = (value: string) => setFilterKind(value)
+    const [ filterKind, setFilterKind ] = useState<string>('');    
 
     return(
     <>
-    <div className="misdemeanour__container container"><p className='misdemeanour__filter'><select id='filterMisdemeanourKind' defaultValue="" placeholder="Filter" onChange={(e) => changeFilter(e.target.value)}>
-    <option value="" disabled>Filter</option>
-    {MISDEMEANOURS.map((m, index) => <option key={'option' + index} value={m}>{m}</option>)}
-    <option value="all">** show all **</option>
-    </select></p></div>
+    <div className="misdemeanour__container container">
+        <p className='misdemeanour__filter'>
+            <MisdemeanourFilter filterKind={filterKind} setFilterKind={setFilterKind} />
+    </p></div>
     <div id='misdemeanourTable' className='misdemeanour__container container'>                      
             <p className='grid__line heading citizenId__heading'>Citizen ID</p>                  
             <p className='grid__line heading date__heading'>Date</p>                    
@@ -29,7 +28,7 @@ const MisdemeanourDisplay : React.FC = () => {
             <p className='grid__item grid__line grid__column1'>{m.citizenId}</p>
             <p className='grid__item grid__line grid__column2'>{m.date}</p>
             <p className='grid__item grid__line grid__column3'>{m.misdemeanour} {MISDEMEANOUR_EMOJIS[MISDEMEANOURS.indexOf(m.misdemeanour)]}</p>
-            <p className='grid__item grid__column4'><img src={`https://picsum.photos/150/100?random=${m.citizenId}`} /></p>
+            <p className='grid__item grid__column4'><img src={`https://picsum.photos/130/90?random=${m.citizenId}`} /></p>
             </React.Fragment>))}    
     </div>
 

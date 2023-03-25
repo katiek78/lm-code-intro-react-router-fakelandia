@@ -59,7 +59,7 @@ select {
 
 .misdemeanour__container {
   display: grid;  
-  grid-template-columns: 1fr [line1] 1fr [line2] 1.5fr [line3] 1fr;    
+  grid-template-columns: 1fr [line1] 1fr [line2] 1.5fr [line3] 2fr;    
   gap: 0;
 }
 
