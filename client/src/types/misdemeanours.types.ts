@@ -21,3 +21,12 @@ export const MISDEMEANOUR_EMOJIS = [
 	'🗣',
 	'😈'
 ]
+
+export function isMisdemeanourKindorJustTalk(
+	userInput: string
+  ): userInput is MisdemeanourKind | JustTalk {
+	return (
+	  MISDEMEANOURS.find((el) => el === userInput) !== undefined ||
+	  userInput === JUST_TALK
+	);
+  }

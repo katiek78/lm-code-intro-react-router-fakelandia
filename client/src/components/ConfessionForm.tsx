@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import postConfession from "./postConfession";
 import {
-  JustTalk,
-  JUST_TALK,
+  JustTalk,  
   MisdemeanourKind,
-  MISDEMEANOURS
+  isMisdemeanourKindorJustTalk
 } from "../types/misdemeanours.types";
 import { ConfessionType } from "../types/confession.types";
 import { useMisdemeanours } from "./MisdemeanourContext";
@@ -33,14 +32,6 @@ const ConfessionForm: React.FC = () => {
         document.getElementsByTagName("select")[0];
       if (!reasonInput) return;
   
-      function isMisdemeanourKindorJustTalk(
-        userInput: string
-      ): userInput is MisdemeanourKind | JustTalk {
-        return (
-          MISDEMEANOURS.find((el) => el === userInput) !== undefined ||
-          userInput === JUST_TALK
-        );
-      }
       if (!isMisdemeanourKindorJustTalk(reasonInput.value)) return;
       const reason: MisdemeanourKind | JustTalk = reasonInput.value;
   
