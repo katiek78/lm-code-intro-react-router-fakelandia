@@ -15,7 +15,7 @@ const MisdemeanourList: React.FC = () => {
 <p className='grid__item grid__line grid__column1'>{m.citizenId}</p>
 <p className='grid__item grid__line grid__column2'>{m.date}</p>
 <p className='grid__item grid__line grid__column3'>{m.misdemeanour} {MISDEMEANOUR_EMOJIS[MISDEMEANOURS.indexOf(m.misdemeanour)]}</p>
-<p className='grid__item grid__column4'><img src={`https://picsum.photos/130/90?random=${m.citizenId}`} /></p>
+<p className='grid__item grid__column4'><img src={`https://picsum.photos/130/90?random=${m.citizenId}`} alt="Lorem Picsum image" /></p>
 </React.Fragment>))}   
 </>
     );
