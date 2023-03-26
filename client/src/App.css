@@ -57,6 +57,13 @@ select {
   margin: 0 auto;
 }
 
+.statistics {
+  border: 2px dashed #000000;  
+  text-align: center;
+  width:85%;
+  margin: 0 auto;
+}
+
 .misdemeanour__container {
   display: grid;  
   grid-template-columns: 1fr [line1] 1fr [line2] 1.5fr [line3] 2fr;    
@@ -212,17 +219,16 @@ footer {
   width: 100%;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 710px) {
+  body {
+    font-size: 1.2em;
+  }
 
   .nav__ul {
     list-style-type: none;
     padding: 10px;
-    font-size: 1.5em;  
+    font-size: 1.4em;  
     flex-direction: row;
-  }
-
-  header {
-    width:80%;
   }
 
   .container {
@@ -246,13 +252,17 @@ footer {
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1150px) {
+  body {
+    font-size: 1.4em;
+  }
+  
   .nav__ul {    
-    font-size: 2em;    
+    font-size: 1.7em;    
   }
 
   header {
-    width:70%;
+    width:80%;
   }
 
   .heading {
