@@ -1,5 +1,6 @@
 body {
   font-family: 'Architects Daughter', cursive; 
+  font-size: 100%;
 }
 
 header {
@@ -42,14 +43,6 @@ main {
 
 .nav__a {
   text-decoration: none;
-}
-
-input {
-  height:25px;
-}
-
-select {
-  height:25px;
 }
 
 .container {
@@ -139,7 +132,7 @@ select {
 }
 
 .confession__text {
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 .confession__form {
@@ -164,10 +157,6 @@ select {
 
 .confession__formElement--focus-invalid {
   border: 4px solid #FF0000;
-}
-
-.confession__label {
-  
 }
 
 .confession__validation {
@@ -203,7 +192,7 @@ select {
 }
 .confession__button-text {
   font-family: 'Architects Daughter', cursive; 
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 
 .confession__message{
@@ -220,10 +209,6 @@ footer {
 }
 
 @media only screen and (min-width: 710px) {
-  body {
-    font-size: 1.2em;
-  }
-
   .nav__ul {
     list-style-type: none;
     padding: 10px;
@@ -244,18 +229,15 @@ footer {
   }
 
   .confession__text {
-    font-size: 1.5em;
+    font-size: 1.1em;
   }
 
   .confession__button-text {
-    font-size: 1.5em;
+    font-size: 1.1em;
   }
 }
 
 @media only screen and (min-width: 1150px) {
-  body {
-    font-size: 1.4em;
-  }
   
   .nav__ul {    
     font-size: 1.7em;    
@@ -278,11 +260,11 @@ footer {
   }
 
   .confession__text {
-    font-size: 1.8em;
+    font-size: 1.3em;
   }
 
   .confession__button-text {
-    font-size: 1.8em;
+    font-size: 1.3em;
   }
 
 
