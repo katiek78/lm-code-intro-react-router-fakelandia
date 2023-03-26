@@ -70,6 +70,11 @@ select {
   vertical-align: middle;
 }
 
+.misdemeanour__loading {
+  text-align: center;
+  font-size: 2em;
+}
+
 .heading {
   font-weight: bold;
   font-size: 0.75em;
