@@ -12,7 +12,6 @@ header {
   margin: 0 auto; 
 }
 
-
 main {
   margin: 3em 10%;  
 }
@@ -23,8 +22,8 @@ main {
   padding: 20px;
 }
 
-.nav {
- 
+img {
+  max-width: 100%;
 }
 
 .nav__ul {
@@ -59,7 +58,7 @@ main {
 
 .misdemeanour__container {
   display: grid;  
-  grid-template-columns: 1fr [line1] 1fr [line2] 1.5fr [line3] 2fr;    
+  grid-template-columns: 1fr [line1] 1fr [line2] 1fr [line3] 1.5fr [line4] 2fr;    
   gap: 0;
 }
 
@@ -99,8 +98,13 @@ main {
   grid-row: 1;
 }
 
-.punishment__heading {  
+.details__heading { 
   grid-column: 4;
+  grid-row: 1;
+}
+
+.punishment__heading {  
+  grid-column: 5;
   grid-row: 1;
 }
 
@@ -129,6 +133,10 @@ main {
 
 .grid__column4 {
   grid-column: 4;  
+}
+
+.misdemeanour__kind {
+  display: none;
 }
 
 .confession__text {
@@ -234,6 +242,10 @@ footer {
 
   .confession__button-text {
     font-size: 1.1em;
+  }
+
+  .misdemeanour__kind {
+    display: block;
   }
 }
 

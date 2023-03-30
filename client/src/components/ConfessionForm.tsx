@@ -58,6 +58,7 @@ const ConfessionForm: React.FC = () => {
               misdemeanour: reason,
               citizenId: Math.floor(Math.random() * 10000),
               date: new Date().toLocaleDateString("en-GB"),
+              details
             },
           ])
         );
