@@ -120,7 +120,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
+  font-size: 0.7em;
 }
 
 .grid__column1 {
@@ -272,7 +272,7 @@ footer {
   }
 
   .grid__item {
-    font-size:1.2em;
+    font-size:1.7em;
   }
 
   .confession__text {
