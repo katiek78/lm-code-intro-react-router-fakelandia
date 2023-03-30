@@ -112,6 +112,11 @@ img {
   grid-row: 1;
 }
 
+.forgivenesses__heading {  
+  grid-column: 6;
+  grid-row: 1;
+}
+
 .grid__line {
   border-right-style: solid;
 }
@@ -137,6 +142,10 @@ img {
 
 .grid__column4 {
   grid-column: 4;  
+}
+
+.grid__column5 {
+  grid-column: 5;  
 }
 
 .misdemeanour__kind {

@@ -11,6 +11,7 @@ import ConfessionFormSubject from "./ConfessionFormSubject";
 import ConfessionFormReason from "./ConfessionFormReason";
 import ConfessionFormDetails from "./ConfessionFormDetails";
 import ConfessionFormButton from "./ConfessionFormButton";
+import { STANDARD_FORGIVENESSES } from "../types/misdemeanours.types";
 
 const ConfessionForm: React.FC = () => {
 
@@ -58,7 +59,8 @@ const ConfessionForm: React.FC = () => {
               misdemeanour: reason,
               citizenId: Math.floor(Math.random() * 10000),
               date: new Date().toLocaleDateString("en-GB"),
-              details
+              details,
+              forgivenessesNeeded: reason === 'united' ? null : Math.floor(STANDARD_FORGIVENESSES/2)
             },
           ])
         );

@@ -14,6 +14,7 @@ export type Misdemeanour = {
 	misdemeanour: MisdemeanourKind;
 	date: string; // we'll stringify this for easy sending via HTTP rather than storing the full Date object
 	details?: string;
+	forgivenessesNeeded: number | null;
 };
 
 export const MISDEMEANOUR_EMOJIS = [
@@ -31,3 +32,5 @@ export function isMisdemeanourKindorJustTalk(
 	  userInput === JUST_TALK
 	);
   }
+
+export const STANDARD_FORGIVENESSES = 10;

@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import loadMisdemeanours from "./loadMisdemeanour";
 import { Misdemeanour } from "../types/misdemeanours.types";
 import MisdemeanourContext from "./MisdemeanourContext";
+import { STANDARD_FORGIVENESSES } from "../types/misdemeanours.types";
+import { raw } from "express";
 
 const MainLayout: React.FC = () => {
   const [misdemeanours, setMisdemeanours] = useState<Misdemeanour[]>([]);
@@ -12,7 +14,9 @@ const MainLayout: React.FC = () => {
   useEffect(() => {
     const getMisdemeanours = async () => {
       const result = await loadMisdemeanours();
-      setMisdemeanours(result.misdemeanours);
+      const rawMisdemeanours: Misdemeanour[] = result.misdemeanours;
+      const misdemeanoursWithForgiveness: Misdemeanour[] = rawMisdemeanours.map(m => {return { ...m, forgivenessesNeeded: m.misdemeanour === 'united' ? null : STANDARD_FORGIVENESSES }});      
+      setMisdemeanours(misdemeanoursWithForgiveness);
     };
     getMisdemeanours();
   }, []);

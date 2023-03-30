@@ -19,7 +19,8 @@ const MisdemeanourDisplay : React.FC = () => {
             
             <p className='grid__line heading misdemeanour__heading'>Misdemeanour</p>            
             <p className='grid__line heading details__heading'>Details</p>            
-            <p className='heading punishment__heading'>Punishment idea</p>
+            <p className='grid__line heading punishment__heading'>Punishment idea</p>
+            <p className='heading forgivenesses__heading'>Forgivenesses needed</p>
             
             <MisdemeanourList />
     </div>
