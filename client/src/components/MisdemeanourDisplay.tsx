@@ -26,8 +26,8 @@ const MisdemeanourDisplay : React.FC = () => {
     </div>
 
     <div>
-     
-        </div>
+    <a target="_blank" href="https://icons8.com/icon/7mHfZHK9mvZw/peace-pigeon">Peace Pigeon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </div>
     </>
     )
 }
