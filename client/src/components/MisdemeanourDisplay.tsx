@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useMisdemeanours } from "./MisdemeanourContext";
-import { MISDEMEANOURS, MISDEMEANOUR_EMOJIS } from "../types/misdemeanours.types";
 import MisdemeanourFilter from "./MisdemeanourFilter";
 import MisdemeanourList from "./MisdemeanourList";
 
