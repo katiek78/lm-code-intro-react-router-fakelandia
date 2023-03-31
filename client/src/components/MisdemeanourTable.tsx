@@ -17,7 +17,6 @@ const MisdemeanourTable: React.FC = () => {
       <div id="misdemeanourTable" className="misdemeanour__container container">
         <p className="grid__line heading citizenId__heading">Citizen ID</p>
         <p className="grid__line heading date__heading">Date</p>
-
         <p className="grid__line heading misdemeanour__heading">Misdemeanour</p>
         <p className="grid__line heading details__heading">Details</p>
         <p className="grid__line heading punishment__heading">
