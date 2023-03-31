@@ -3,6 +3,7 @@ import { useMisdemeanours } from "./MisdemeanourContext";
 import { MISDEMEANOURS, MISDEMEANOUR_EMOJIS, MISDEMEANOUR_LONG_TEXTS } from "../types/misdemeanours.types";
 import MisdemeanourCitizenID from "./MisdemeanourCitizenID";
 import MisdemeanourDate from "./MisdemeanourDate";
+import MisdemeanourDetails from "./MisdemeanourDetails";
 import pigeon from '../assets/icons8-peace-pigeon-80.png'
 import lfc from '../assets/soccer-g374b8d6df_640.jpg'
 import MisdemeanourKind from "./MisdemeanourKind";
@@ -33,6 +34,7 @@ const MisdemeanourList: React.FC = () => {
 <MisdemeanourCitizenID misdemeanour={m} />
 <MisdemeanourDate misdemeanour={m} />
 <MisdemeanourKind misdemeanour={m} />
+<MisdemeanourDetails misdemeanour={m} />
 <p className={`grid__item grid__line grid__column5`}><img src={m.misdemeanour === 'united' ? lfc : `https://picsum.photos/150/90?random=${m.citizenId}`} alt="Lorem Picsum image" /></p>
 <p className={`grid__item grid__column6`}><span className={`${m.details ? 'misdemeanour--self-confessed' : ''}`}>{m.forgivenessesNeeded} {m.forgivenessesNeeded !== null && m.forgivenessesNeeded > 0 && <img onClick={(e) => handleForgive(m.citizenId)} height={30} alt="peace pigeon icon" src={pigeon} />}</span></p>
 </React.Fragment>))}   
