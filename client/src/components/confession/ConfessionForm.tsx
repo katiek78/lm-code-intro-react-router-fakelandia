@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import postConfession from "../postConfession";
+import postConfession from "./postConfession";
 import {
   JustTalk,  
   MisdemeanourKind,

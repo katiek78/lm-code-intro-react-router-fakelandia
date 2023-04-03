@@ -1,4 +1,4 @@
-import { ConfessionType } from '../types/confession.types'
+import { ConfessionType } from '../../types/confession.types'
 
 export default async function postConfession(confession: ConfessionType) {
     
