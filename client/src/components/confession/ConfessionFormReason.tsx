@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MISDEMEANOURS } from "../types/misdemeanours.types";
+import { MISDEMEANOURS } from "../../types/misdemeanours.types";
 
 interface ConfessionFormReasonProps {
   validReason: boolean;

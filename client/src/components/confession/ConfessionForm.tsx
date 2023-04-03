@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
-import postConfession from "./postConfession";
+import postConfession from "../postConfession";
 import {
   JustTalk,  
   MisdemeanourKind,
   isMisdemeanourKindorJustTalk
-} from "../types/misdemeanours.types";
-import { ConfessionType } from "../types/confession.types";
-import { useMisdemeanours } from "./MisdemeanourContext";
-import ConfessionFormSubject from "./ConfessionFormSubject";
+} from "../../types/misdemeanours.types";
+import { ConfessionType } from "../../types/confession.types";
+import { useMisdemeanours } from "../MisdemeanourContext";
+import ConfessionFormSubject from "../ConfessionFormSubject";
 import ConfessionFormReason from "./ConfessionFormReason";
 import ConfessionFormDetails from "./ConfessionFormDetails";
 import ConfessionFormButton from "./ConfessionFormButton";
-import { STANDARD_FORGIVENESSES } from "../types/misdemeanours.types";
+import { STANDARD_FORGIVENESSES } from "../../types/misdemeanours.types";
 
 const ConfessionForm: React.FC = () => {
 
