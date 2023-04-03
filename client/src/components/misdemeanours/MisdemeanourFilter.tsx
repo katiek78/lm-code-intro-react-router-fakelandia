@@ -1,4 +1,4 @@
-import { Misdemeanour, MISDEMEANOURS } from "../types/misdemeanours.types";
+import { MISDEMEANOURS } from "../../types/misdemeanours.types";
 interface MisdemeanourFilterProps {
     filterKind: string;
     setFilterKind: React.Dispatch<React.SetStateAction<string>>;

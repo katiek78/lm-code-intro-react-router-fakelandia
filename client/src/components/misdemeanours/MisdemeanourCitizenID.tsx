@@ -1,4 +1,4 @@
-import { Misdemeanour } from "../types/misdemeanours.types";
+import { Misdemeanour } from "../../types/misdemeanours.types";
 
 interface MisdemeanourCitizenIDProps {
   misdemeanour: Misdemeanour;

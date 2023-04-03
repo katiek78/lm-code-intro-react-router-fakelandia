@@ -1,5 +1,5 @@
 import { useMisdemeanours } from "./MisdemeanourContext";
-import { Misdemeanour, MISDEMEANOUR_LONG_TEXTS, MISDEMEANOURS } from "../types/misdemeanours.types";
+import { Misdemeanour, MISDEMEANOUR_LONG_TEXTS, MISDEMEANOURS } from "../../types/misdemeanours.types";
 import pigeon from "../assets/icons8-peace-pigeon-80.png";
 
 interface MisdemeanourForgivenessProps {

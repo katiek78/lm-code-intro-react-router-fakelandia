@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import MisdemeanourContext from "./MisdemeanourContext";
-import { Misdemeanour } from "../types/misdemeanours.types";
+import { Misdemeanour } from "../../types/misdemeanours.types";
 import MisdemeanourDisplay from "./MisdemeanourDisplay";
 
 test('provides expected MisdemeanourContext object to child elements', () => {

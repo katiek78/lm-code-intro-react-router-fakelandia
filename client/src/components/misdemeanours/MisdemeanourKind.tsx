@@ -1,5 +1,4 @@
-import { Misdemeanour } from "../types/misdemeanours.types";
-import { MISDEMEANOURS, MISDEMEANOUR_EMOJIS } from "../types/misdemeanours.types";
+import { Misdemeanour, MISDEMEANOURS, MISDEMEANOUR_EMOJIS } from "../../types/misdemeanours.types";
 
 interface MisdemeanourKindProps {
   misdemeanour: Misdemeanour;

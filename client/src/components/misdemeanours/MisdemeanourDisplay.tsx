@@ -1,5 +1,5 @@
 import React from "react";
-import { STANDARD_FORGIVENESSES } from "../types/misdemeanours.types";
+import { STANDARD_FORGIVENESSES } from "../../types/misdemeanours.types";
 import MisdemeanourTable from "./MisdemeanourTable";
 import pigeon from '../assets/icons8-peace-pigeon-80.png'
 
