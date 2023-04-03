@@ -61,6 +61,10 @@ img {
   padding: 3px;
 }
 
+.text--lfc {
+  color: red;
+}
+
 .misdemeanour__container {
   display: grid;  
   grid-template-columns: 1fr [line1] 1fr [line2] 1.5fr [line3] 1.5fr [line4] 1.5fr [line5] 1.5fr;    
