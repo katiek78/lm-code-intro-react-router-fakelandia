@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Confession from './confession/Confession';
 import Home from './Home';
 import Misdemeanours from './Misdemeanours';
-import Error404 from './Error404';
+import Error404 from './error/Error404';
 import MainLayout from './MainLayout';
 
 const Router: React.FC = () =>     
