@@ -1,5 +1,5 @@
 import { Misdemeanour } from "../../types/misdemeanours.types";
-import lfc from "../assets/soccer-g374b8d6df_640.jpg";
+import lfc from "../../assets/soccer-g374b8d6df_640.jpg";
 
 interface MisdemeanourPunishmentProps {
   misdemeanour: Misdemeanour;
