@@ -6,7 +6,7 @@ import {
   isMisdemeanourKindorJustTalk
 } from "../../types/misdemeanours.types";
 import { ConfessionType } from "../../types/confession.types";
-import { useMisdemeanours } from "../MisdemeanourContext";
+import { useMisdemeanours } from "../misdemeanours/MisdemeanourContext";
 import ConfessionFormSubject from "./ConfessionFormSubject";
 import ConfessionFormReason from "./ConfessionFormReason";
 import ConfessionFormDetails from "./ConfessionFormDetails";
