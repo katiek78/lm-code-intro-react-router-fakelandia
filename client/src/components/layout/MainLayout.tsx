@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import loadMisdemeanours from "./loadMisdemeanour";
-import { Misdemeanour } from "../types/misdemeanours.types";
-import MisdemeanourContext from "./MisdemeanourContext";
-import { STANDARD_FORGIVENESSES } from "../types/misdemeanours.types";
+import loadMisdemeanours from "../loadMisdemeanour";
+import { Misdemeanour } from "../../types/misdemeanours.types";
+import MisdemeanourContext from "../MisdemeanourContext";
+import { STANDARD_FORGIVENESSES } from "../../types/misdemeanours.types";
 import { raw } from "express";
 
 const MainLayout: React.FC = () => {

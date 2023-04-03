@@ -3,7 +3,7 @@ import Confession from './confession/Confession';
 import Home from './Home';
 import Misdemeanours from './Misdemeanours';
 import Error404 from './error/Error404';
-import MainLayout from './MainLayout';
+import MainLayout from './layout/MainLayout';
 
 const Router: React.FC = () =>     
         <Routes>
