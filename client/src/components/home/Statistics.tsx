@@ -1,4 +1,4 @@
-import { useMisdemeanours } from "./MisdemeanourContext";
+import { useMisdemeanours } from "../MisdemeanourContext";
 
 const Statistics: React.FC = () => {
     const {misdemeanours} = useMisdemeanours();
