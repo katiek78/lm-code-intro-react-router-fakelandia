@@ -9,6 +9,7 @@ interface MisdemeanourForgivenessProps {
 const MisdemeanourForgiveness: React.FC<MisdemeanourForgivenessProps> = ({misdemeanour}) => {
     const {misdemeanours, setMisdemeanours} = useMisdemeanours();
     const handleForgive = (citizenId: number) => {
+      console.log("forgiving now");
         setMisdemeanours(misdemeanours.map(m => {
             if (m.citizenId === citizenId) {
                 if (m.forgivenessesNeeded === 1) {
