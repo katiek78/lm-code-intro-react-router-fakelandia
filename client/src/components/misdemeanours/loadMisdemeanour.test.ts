@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node'
+import { Misdemeanour } from '../../types/misdemeanours.types';
 import loadMisdemeanours from './loadMisdemeanour';
 
 const server = setupServer(
@@ -11,7 +12,8 @@ const server = setupServer(
             {
               citizenId: 2845,
               misdemeanour: 'united',
-              date: '2023-03-03'
+              date: '2023-03-03',
+              forgivenessesNeeded: 10
             }
           ]
       }));
@@ -22,10 +24,11 @@ const server = setupServer(
   afterAll(() => server.close());
 
 test('loads a misdemeanour when API call is made', async () => {
-    const misdemeanour = {
+    const misdemeanour : Misdemeanour= {
         citizenId: 2845,
         misdemeanour: 'united',
-        date: '2023-03-03'
+        date: '2023-03-03',
+        forgivenessesNeeded: 10
       };
     const result = await loadMisdemeanours();   
     expect(result).toEqual(
