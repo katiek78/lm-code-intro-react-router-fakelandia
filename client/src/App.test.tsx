@@ -17,7 +17,7 @@ test('App renders and user can navigate', async () => {
 
     // Confessions route
     await user.click(screen.getByText(/Confess To Us/i, { selector: 'a'}))
-    await waitFor(() => expect(screen.getByText(/Confession time!/i)).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(/It's very difficult to catch people committing misdemeanours so we appreciate it when citizens confess to us directly./i)).toBeInTheDocument());
 
     // Home route
     await user.click(screen.getByText(/Home/i, { selector: 'a'}))
