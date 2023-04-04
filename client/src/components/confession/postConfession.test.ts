@@ -5,18 +5,18 @@ import { ConfessionType } from "../../types/confession.types";
 import postConfession from "./postConfession";
 
 const server = setupServer(
-  rest.get("http://localhost:8080/api/confess", (req, res, ctx) => {
+  rest.post("http://localhost:8080/api/confess", (req, res, ctx) => {
     return res(
       ctx.json({
         success: true,
         justTalked: false,
-        message: "Confession received.",
+        message: "Confession received",
       })
     );
   })
 );
 
-beforeAll(() => server.listen({ onUnhandledRequest: "bypass" }));
+beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
@@ -30,8 +30,6 @@ test("posts a confession when API call is made", async () => {
   expect(result).toEqual({
     success: true,
     justTalked: false,
-    message: "Confession received.",
+    message: "Confession received",
   });
 });
-
-//NOTE - I think this is calling the real API as when I alter the result in both the server and the test case (e.g. modifying the message), it doesn't work even if it still matches
