@@ -2,7 +2,7 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
-  "homepage": "/lm-code-intro-react-router-fakelandia/#",
+  "homepage": "https://github.com/katiek78/lm-code-intro-react-router-fakelandia/#",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
