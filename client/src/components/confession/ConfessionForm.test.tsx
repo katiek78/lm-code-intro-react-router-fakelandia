@@ -66,7 +66,7 @@ test('Submit button becomes enabled when all input is filled in correctly', asyn
   test('Submit button is disabled if details are not filled in correctly', async () => {
     const user = userEvent.setup()
     render(<ConfessionForm />);        
-    // we fire user events in child components
+    
     const subjectInput = screen.getByRole('textbox', { name: 'Subject' })
     await userEvent.type(subjectInput, 'My confession');
     
