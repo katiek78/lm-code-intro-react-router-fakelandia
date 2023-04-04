@@ -8,14 +8,14 @@ test('provides expected MisdemeanourContext object to child elements', () => {
     const misdemeanours: Misdemeanour[] = [{
         citizenId: 2845,
         misdemeanour: 'united',
-        date: '2023-03-03'
+        date: '2023-03-03',
+        forgivenessesNeeded: 10
     }]
     const { container } = render(
-        <MisdemeanourContext.Provider value={misdemeanours}>
+        <MisdemeanourContext.Provider value={{misdemeanours, setMisdemeanours: jest.fn()}}>
           <MisdemeanourDisplay />
         </MisdemeanourContext.Provider>,
     );
-          
-    const misdemeanourTable = container.getElementsByClassName('container')[1];
-    expect(misdemeanourTable.childNodes.length).toBeGreaterThanOrEqual(8);
+              
+    expect(screen.getByText(2845)).toBeInTheDocument();
 })
