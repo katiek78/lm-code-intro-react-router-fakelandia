@@ -2,6 +2,19 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom';
 import ConfessionForm from './ConfessionForm';
+import { rest } from "msw";
+import { setupServer } from "msw/node";
+
+const server = setupServer(
+  rest.get(`http://localhost:8080/api/confess`, (req, res, ctx) => {
+    return res(
+        ctx.json({"success":true,"justTalked":false,"message":"Confession received"}));
+  })
+);
+
+beforeAll(() => server.listen())
+afterEach(() => server.resetHandlers())
+afterAll(() => server.close())
 
 test('Submit button becomes enabled when all input is filled in correctly', async () => {
     const user = userEvent.setup()
